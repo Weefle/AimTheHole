@@ -21,7 +21,7 @@ public class ATHJoin implements Listener {
 		Player p = e.getPlayer();
 		if(!Main.getInstance().playeringame.contains(p.getUniqueId())){
 			Main.getInstance().playeringame.add(p.getUniqueId());
-		}
+		
 		if(Main.getInstance().playeringame.size() == 1){
 			task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
 				
@@ -41,6 +41,7 @@ public class ATHJoin implements Listener {
 			}, 20, 20);
 		}
 	}
+}
 	
 	@EventHandler
 	public void onQuit(PlayerQuitEvent e){
