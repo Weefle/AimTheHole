@@ -11,7 +11,12 @@ public class ATHTeleport {
 	public static void teleport() {
 		for(UUID uuid : Main.getInstance().playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
-			pl.teleport(CommandATH.getLocation());
+			if(CommandATH.getLocation() != null){
+			pl.teleport(CommandATH.loc);
+			pl.sendMessage(Main.getInstance().name + "The game is strating...");
+			}else{
+				pl.sendMessage(Main.getInstance().name + "There isn't enough player in the game!");
+			}
 		
 	}
 

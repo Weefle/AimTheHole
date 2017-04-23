@@ -33,7 +33,7 @@ public class ATHJoin implements Listener {
 					if(timer == 15){
 						for(UUID uuid : Main.getInstance().playeringame){
 							Player pl = Bukkit.getPlayer(uuid);
-							pl.sendMessage("AimTheHole will start in 15 seconds!");
+							pl.sendMessage(Main.getInstance().name + "AimTheHole will start in 15 seconds!");
 						}
 					}
 					if(timer == 0){
