@@ -9,12 +9,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 	
 	public static Main instance;
-	public String name;
-	public ArrayList<UUID> playeringame = new ArrayList<>();
-	
-	public static Main getInstance(){
-		return instance;
-	}
+	public static String name;
+	public static ArrayList<UUID> playeringame = new ArrayList<>();
 	
 	@Override
 	public void onEnable() {

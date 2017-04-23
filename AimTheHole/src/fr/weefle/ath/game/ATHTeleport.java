@@ -9,13 +9,13 @@ import fr.weefle.ath.commands.CommandATH;
 public class ATHTeleport {
 
 	public static void teleport() {
-		for(UUID uuid : Main.getInstance().playeringame){
+		for(UUID uuid : Main.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
-			if(CommandATH.getLocation() != null){
+			if(CommandATH.loc != null){
 			pl.teleport(CommandATH.loc);
-			pl.sendMessage(Main.getInstance().name + "The game is strating...");
+			pl.sendMessage(Main.name + "The game is strating...");
 			}else{
-				pl.sendMessage(Main.getInstance().name + "There isn't enough player in the game!");
+				pl.sendMessage(Main.name + "There isn't enough player in the game!");
 			}
 		
 	}

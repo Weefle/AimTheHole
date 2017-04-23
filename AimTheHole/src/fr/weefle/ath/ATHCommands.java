@@ -7,9 +7,7 @@ public class ATHCommands {
 
 
 	public static void registerCommands(Main main) {
-		// TODO Auto-generated method stub
-		Main m = Main.getInstance();
-		m.getCommand("ath").setExecutor(new CommandATH());
+		Main.instance.getCommand("ath").setExecutor(new CommandATH());
 	}
 
 }

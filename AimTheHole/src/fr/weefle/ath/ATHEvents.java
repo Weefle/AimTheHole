@@ -8,7 +8,6 @@ import fr.weefle.ath.events.ATHJoin;
 public class ATHEvents {
 
 	public static void registerEvents(Main main) {
-		// TODO Auto-generated method stub
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new ATHJoin(), main);
 	}

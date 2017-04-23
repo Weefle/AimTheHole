@@ -20,20 +20,20 @@ public class ATHJoin implements Listener {
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e){
 		Player p = e.getPlayer();
-		if(!Main.getInstance().playeringame.contains(p.getUniqueId())){
-			Main.getInstance().playeringame.add(p.getUniqueId());
+		if(!Main.playeringame.contains(p.getUniqueId())){
+			Main.playeringame.add(p.getUniqueId());
 		
-		if(Main.getInstance().playeringame.size() == 1){
-			task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
+		if(Main.playeringame.size() == 1){
+			task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, new Runnable() {
 				
 				@Override
 				public void run() {
 					timer--;
 					setLevel(timer);
 					if(timer == 15){
-						for(UUID uuid : Main.getInstance().playeringame){
+						for(UUID uuid : Main.playeringame){
 							Player pl = Bukkit.getPlayer(uuid);
-							pl.sendMessage(Main.getInstance().name + "AimTheHole will start in 15 seconds!");
+							pl.sendMessage(Main.name + "AimTheHole will start in 15 seconds!");
 						}
 					}
 					if(timer == 0){
@@ -47,7 +47,7 @@ public class ATHJoin implements Listener {
 }
 	
 	public void setLevel(int timer){
-		for(UUID uuid : Main.getInstance().playeringame){
+		for(UUID uuid : Main.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
 			pl.setLevel(timer);
 		}
@@ -56,7 +56,7 @@ public class ATHJoin implements Listener {
 	@EventHandler
 	public void onQuit(PlayerQuitEvent e){
 		Player p = e.getPlayer();
-		Main.getInstance().playeringame.remove(p.getUniqueId());
+		Main.playeringame.remove(p.getUniqueId());
 	}
 	
 }

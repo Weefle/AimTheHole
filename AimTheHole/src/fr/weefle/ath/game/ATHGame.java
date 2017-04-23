@@ -12,11 +12,11 @@ public class ATHGame {
 
 	public static void start() {
 		
-		for(UUID uuid : Main.getInstance().playeringame){
+		for(UUID uuid : Main.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
 			pl.setGameMode(GameMode.ADVENTURE);
 			ATHTeleport.teleport();
-			pl.sendMessage(ChatColor.RED + "" + CommandATH.getLocation() + " " + Main.getInstance().name + "Teleported!");
+			pl.sendMessage(ChatColor.RED + "" + CommandATH.loc + " " + Main.name + "Teleported!");
 		
 	}
 	
