@@ -7,9 +7,9 @@ import fr.weefle.ath.events.ATHJoin;
 
 public class ATHEvents {
 
-	public static void registerEvents(Main main) {
+	public static void registerEvents() {
 		PluginManager pm = Bukkit.getPluginManager();
-		pm.registerEvents(new ATHJoin(), main);
+		pm.registerEvents(new ATHJoin(), Main.instance);
 	}
 
 }

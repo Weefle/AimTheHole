@@ -2,7 +2,6 @@ package fr.weefle.ath;
 
 import java.util.ArrayList;
 import java.util.UUID;
-
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,14 +15,10 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		instance = this;
 		name = ChatColor.GREEN + "[AimTheHole] " + ChatColor.BLUE;
-		ATHEvents.registerEvents(this);
-		ATHCommands.registerCommands(this);
+		ATHEvents.registerEvents();
+		ATHCommands.registerCommands();
+		CreateConfig.createConfig();
 		super.onEnable();
-	}
-	
-	@Override
-	public void onDisable() {
-		super.onDisable();
 	}
 
 }

@@ -15,7 +15,7 @@ public class ATHTeleport {
 			pl.teleport(CommandATH.loc);
 			pl.sendMessage(Main.name + "The game is strating...");
 			}else{
-				pl.sendMessage(Main.name + "There isn't enough player in the game!");
+				pl.sendMessage(Main.name + "You don't have defined the spawn!");
 			}
 		
 	}
