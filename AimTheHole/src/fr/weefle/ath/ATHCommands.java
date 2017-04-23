@@ -1,6 +1,6 @@
-package fr.weefle.ath.commands;
+package fr.weefle.ath;
 
-import fr.weefle.ath.Main;
+import fr.weefle.ath.commands.CommandATH;
 
 public class ATHCommands {
 

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.UUID;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.weefle.ath.commands.ATHCommands;
-
 public class Main extends JavaPlugin {
 	
 	public static Main instance;
