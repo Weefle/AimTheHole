@@ -6,6 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import fr.weefle.ath.Main;
+
 public class CommandATH implements CommandExecutor {
 
 	public static Location loc;
@@ -18,6 +20,8 @@ public class CommandATH implements CommandExecutor {
             Player p = (Player) sender;
             
             loc = p.getLocation();
+            
+            Main.instance.getConfig().set("location", loc);
             
 		}
 		return true;

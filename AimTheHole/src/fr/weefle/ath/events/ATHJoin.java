@@ -15,7 +15,7 @@ import fr.weefle.ath.game.ATHGame;
 public class ATHJoin implements Listener {
 	
 	public static int task;
-	public static int timer = 30;
+	public static int timer = 25;
 	
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e){
@@ -30,10 +30,10 @@ public class ATHJoin implements Listener {
 				public void run() {
 					timer--;
 					setLevel(timer);
-					if(timer == 15){
+					if(timer == 10){
 						for(UUID uuid : Main.playeringame){
 							Player pl = Bukkit.getPlayer(uuid);
-							pl.sendMessage(Main.name + "AimTheHole will start in 15 seconds!");
+							pl.sendMessage(Main.name + "AimTheHole will start in " + timer + " seconds!");
 						}
 					}
 					if(timer == 0){
