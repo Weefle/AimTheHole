@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import fr.weefle.ath.Main;
+import fr.weefle.ath.game.ATHGame;
 
 public class ATHJoin implements Listener {
 	
@@ -28,6 +29,7 @@ public class ATHJoin implements Listener {
 				@Override
 				public void run() {
 					timer--;
+					setLevel(timer);
 					if(timer == 15){
 						for(UUID uuid : Main.getInstance().playeringame){
 							Player pl = Bukkit.getPlayer(uuid);
@@ -36,12 +38,20 @@ public class ATHJoin implements Listener {
 					}
 					if(timer == 0){
 						Bukkit.getScheduler().cancelTask(task);
+						ATHGame.start();
 					}
 				}
 			}, 20, 20);
 		}
 	}
 }
+	
+	public void setLevel(int timer){
+		for(UUID uuid : Main.getInstance().playeringame){
+			Player pl = Bukkit.getPlayer(uuid);
+			pl.setLevel(timer);
+		}
+	}
 	
 	@EventHandler
 	public void onQuit(PlayerQuitEvent e){
