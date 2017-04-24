@@ -1,6 +1,6 @@
 name: AimTheHole
 author: Weefle
-version: 0.0.5
+version: 0.0.6
 description: Aim The Hole
 main: fr.weefle.ath.Main
 commands:

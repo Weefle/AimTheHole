@@ -5,22 +5,18 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import fr.weefle.ath.Main;
-import fr.weefle.ath.commands.CommandATH;
 
 public class ATHTeleport {
 
 	public static void teleport() {
 		for(UUID uuid : Main.playeringame){
-			String location = Main.instance.getConfig().getString("location");
 			Player pl = Bukkit.getPlayer(uuid);
-			if(location != null){
-			pl.teleport(location);
+			Location loc = new Location(Bukkit.getWorld("world"), Main.instance.getConfig().getDouble("Spawn.x"), Main.instance.getConfig().getDouble("Spawn.y"), Main.instance.getConfig().getDouble("Spawn.z"));
+			if(loc != null){
+			pl.teleport(loc);
 			pl.sendMessage(Main.name + "The game is strating...");
-			}else{
-				pl.sendMessage(Main.name + "You don't have defined the spawn!");
-			}
-		
-	}
 
+}
+	}
 }
 }

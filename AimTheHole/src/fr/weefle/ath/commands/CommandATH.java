@@ -10,8 +10,6 @@ import fr.weefle.ath.Main;
 
 public class CommandATH implements CommandExecutor {
 
-	public static Location loc;
-
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
@@ -19,9 +17,12 @@ public class CommandATH implements CommandExecutor {
 			
             Player p = (Player) sender;
             
-            loc = p.getLocation();
+            Location loc = p.getLocation();
             
-            Main.instance.getConfig().set("location", loc);
+            Main.instance.getConfig().set("Spawn.x", loc.getX());
+            Main.instance.getConfig().set("Spawn.y", loc.getY());
+            Main.instance.getConfig().set("Spawn.z", loc.getZ());
+            Main.instance.saveConfig();
             
 		}
 		return true;

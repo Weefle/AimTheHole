@@ -4,9 +4,9 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import fr.weefle.ath.Main;
-import fr.weefle.ath.commands.CommandATH;
 
 public class ATHGame {
 
@@ -14,9 +14,10 @@ public class ATHGame {
 		
 		for(UUID uuid : Main.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
+			Location loc = new Location(Bukkit.getWorld("world"), Main.instance.getConfig().getDouble("Spawn.x"), Main.instance.getConfig().getDouble("Spawn.y"), Main.instance.getConfig().getDouble("Spawn.z"));
 			pl.setGameMode(GameMode.ADVENTURE);
 			ATHTeleport.teleport();
-			pl.sendMessage(ChatColor.RED + "" + CommandATH.loc + " " + Main.name + "Teleported!");
+			pl.sendMessage(ChatColor.RED + "" + loc + " " + Main.name + "Teleported!");
 		
 	}
 	
