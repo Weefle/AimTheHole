@@ -10,6 +10,7 @@ public class ATHEvents {
 	public static void registerEvents() {
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new ATHJoin(), Main.instance);
+		pm.registerEvents(new ATHJump(), Main.instance);
 	}
 
 }

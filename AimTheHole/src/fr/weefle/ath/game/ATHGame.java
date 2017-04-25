@@ -14,7 +14,7 @@ public class ATHGame {
 		
 		for(UUID uuid : Main.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
-			Location loc = new Location(Bukkit.getWorld("world"), Main.instance.getConfig().getDouble("Spawn.x"), Main.instance.getConfig().getDouble("Spawn.y"), Main.instance.getConfig().getDouble("Spawn.z"));
+			Location loc = new Location(pl.getWorld(), Main.instance.getConfig().getDouble("Spawn.x"), Main.instance.getConfig().getDouble("Spawn.y"), Main.instance.getConfig().getDouble("Spawn.z"));
 			pl.setGameMode(GameMode.ADVENTURE);
 			ATHTeleport.teleport();
 			pl.sendMessage(ChatColor.RED + "" + loc + " " + Main.name + "Teleported!");
