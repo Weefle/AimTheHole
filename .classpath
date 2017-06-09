@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="AimTheHole/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Weefle/Desktop/Spigot/spigot-1.11.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Weefle/Documents/teamspeak3-api-1.0.15-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weefle/Desktop/Spigot/spigot-1.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
