@@ -8,37 +8,40 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-
 import fr.weefle.ath.Main;
-import fr.weefle.ath.game.ATHGame;
+
 
 public class ATHJoin implements Listener {
 	
-	public static int task;
-	public static int timer = 25;
+	public int task;
+	public int timer = 25;
+	private Main m;
+	public ATHJoin(Main m){
+		this.m = m;
+	}
 	
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e){
 		Player p = e.getPlayer();
-		if(!Main.playeringame.contains(p.getUniqueId())){
-			Main.playeringame.add(p.getUniqueId());
+		if(!m.playeringame.contains(p.getUniqueId())){
+			m.playeringame.add(p.getUniqueId());
 		
-		if(Main.playeringame.size() == 1){
-			task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, new Runnable() {
+		if(m.playeringame.size() == 1){
+			task = Bukkit.getScheduler().scheduleSyncRepeatingTask(m.instance, new Runnable() {
 				
 				@Override
 				public void run() {
 					timer--;
 					setLevel(timer);
 					if(timer == 10){
-						for(UUID uuid : Main.playeringame){
+						for(UUID uuid : m.playeringame){
 							Player pl = Bukkit.getPlayer(uuid);
-							pl.sendMessage(Main.name + "AimTheHole will start in " + timer + " seconds!");
+							pl.sendMessage(m.name + "AimTheHole will start in " + timer + " seconds!");
 						}
 					}
 					if(timer == 0){
 						Bukkit.getScheduler().cancelTask(task);
-						ATHGame.start();
+						m.g.start();
 					}
 				}
 			}, 20, 20);
@@ -47,7 +50,7 @@ public class ATHJoin implements Listener {
 }
 	
 	public void setLevel(int timer){
-		for(UUID uuid : Main.playeringame){
+		for(UUID uuid : m.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
 			pl.setLevel(timer);
 		}
@@ -56,7 +59,7 @@ public class ATHJoin implements Listener {
 	@EventHandler
 	public void onQuit(PlayerQuitEvent e){
 		Player p = e.getPlayer();
-		Main.playeringame.remove(p.getUniqueId());
+		m.playeringame.remove(p.getUniqueId());
 	}
 	
 }

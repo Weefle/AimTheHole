@@ -1,10 +1,21 @@
 package fr.weefle.ath;
 
 import org.bukkit.event.Listener;
+/*import org.bukkit.GameMode;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerToggleFlightEvent;*/
 
 public class ATHJump implements Listener {
 	
-   /* @EventHandler
+	/*private Main m;
+	public ATHJump(Main m){
+		this.m = m;
+	}
+	
+    @EventHandler
     public void onPlayerToggleFlight(PlayerToggleFlightEvent event) {
             Player player = event.getPlayer();
             if (player.getGameMode() == GameMode.CREATIVE)

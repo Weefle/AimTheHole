@@ -4,21 +4,26 @@ import java.io.File;
 
 public class CreateConfig {
 	
-	public static void createConfig() {
+	private Main m;
+	public CreateConfig(Main m){
+		this.m = m;
+	}
+	
+	public void createConfig() {
 		
-		File f = new File(Main.instance.getDataFolder(), "config.yml");
+		File f = new File(this.m.instance.getDataFolder(), "config.yml");
 		
 		if(f.exists()){
 			
-			System.out.println(Main.name + "The configuration's file exists!");
+			System.out.println(m.name + "The configuration's file exists!");
 			
 		}else{
-			Main.instance.getConfig().options().copyDefaults(false);
-			Main.instance.getConfig().createSection("Spawn");
-			Main.instance.getConfig().createSection("Spawn.x");
-			Main.instance.getConfig().createSection("Spawn.y");
-			Main.instance.getConfig().createSection("Spawn.z");
-			Main.instance.saveConfig();
+			m.instance.getConfig().options().copyDefaults(false);
+			m.instance.getConfig().createSection("Spawn");
+			m.instance.getConfig().createSection("Spawn.x");
+			m.instance.getConfig().createSection("Spawn.y");
+			m.instance.getConfig().createSection("Spawn.z");
+			m.instance.saveConfig();
 			}
 
 }

@@ -9,15 +9,20 @@ import org.bukkit.entity.Player;
 import fr.weefle.ath.Main;
 
 public class ATHGame {
+	
+	private Main m;
+	public ATHGame(Main m){
+		this.m = m;
+	}
 
-	public static void start() {
+	public void start() {
 		
-		for(UUID uuid : Main.playeringame){
+		for(UUID uuid : m.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
-			Location loc = new Location(pl.getWorld(), Main.instance.getConfig().getDouble("Spawn.x"), Main.instance.getConfig().getDouble("Spawn.y"), Main.instance.getConfig().getDouble("Spawn.z"));
+			Location loc = new Location(pl.getWorld(), m.instance.getConfig().getDouble("Spawn.x"), m.instance.getConfig().getDouble("Spawn.y"), m.instance.getConfig().getDouble("Spawn.z"));
 			pl.setGameMode(GameMode.ADVENTURE);
-			ATHTeleport.teleport();
-			pl.sendMessage(ChatColor.RED + "" + loc + " " + Main.name + "Teleported!");
+			m.t.teleport();
+			pl.sendMessage(ChatColor.RED + "" + loc + " " + m.name + "Teleported!");
 		
 	}
 	

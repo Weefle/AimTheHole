@@ -5,10 +5,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
 import fr.weefle.ath.Main;
 
 public class CommandATH implements CommandExecutor {
+	
+	private Main m;
+	public CommandATH(Main m){
+		this.m = m;
+	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -19,10 +23,10 @@ public class CommandATH implements CommandExecutor {
             
             Location loc = p.getLocation();
             
-            Main.instance.getConfig().set("Spawn.x", loc.getX());
-            Main.instance.getConfig().set("Spawn.y", loc.getY());
-            Main.instance.getConfig().set("Spawn.z", loc.getZ());
-            Main.instance.saveConfig();
+            m.instance.getConfig().set("Spawn.x", loc.getX());
+            m.instance.getConfig().set("Spawn.y", loc.getY());
+            m.instance.getConfig().set("Spawn.z", loc.getZ());
+            m.instance.saveConfig();
             
 		}
 		return true;

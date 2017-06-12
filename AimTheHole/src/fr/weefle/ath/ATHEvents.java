@@ -6,11 +6,16 @@ import org.bukkit.plugin.PluginManager;
 import fr.weefle.ath.events.ATHJoin;
 
 public class ATHEvents {
-
-	public static void registerEvents() {
+	
+	private Main m;
+	public ATHEvents(Main m){
+		this.m = m;
+	}
+	
+	public void registerEvents() {
 		PluginManager pm = Bukkit.getPluginManager();
-		pm.registerEvents(new ATHJoin(), Main.instance);
-		pm.registerEvents(new ATHJump(), Main.instance);
+		pm.registerEvents(new ATHJoin(m), m.instance);
+		/*pm.registerEvents(new ATHJump(m), m.instance);*/
 	}
 
 }
