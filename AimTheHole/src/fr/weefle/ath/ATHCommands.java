@@ -10,7 +10,7 @@ public class ATHCommands {
 	}
 
 	public void registerCommands() {
-		m.getCommand("ath").setExecutor(new CommandATH(m.instance));
+		m.getCommand("ath").setExecutor(new CommandATH(m));
 	}
 
 }

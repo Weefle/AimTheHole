@@ -27,7 +27,7 @@ public class ATHJoin implements Listener {
 			m.playeringame.add(p.getUniqueId());
 		
 		if(m.playeringame.size() == 1){
-			task = Bukkit.getScheduler().scheduleSyncRepeatingTask(m.instance, new Runnable() {
+			task = Bukkit.getScheduler().scheduleSyncRepeatingTask(m, new Runnable() {
 				
 				@Override
 				public void run() {

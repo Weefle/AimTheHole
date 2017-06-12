@@ -11,19 +11,19 @@ public class CreateConfig {
 	
 	public void createConfig() {
 		
-		File f = new File(this.m.instance.getDataFolder(), "config.yml");
+		File f = new File(this.m.getDataFolder(), "config.yml");
 		
 		if(f.exists()){
 			
-			System.out.println(m.name + "The configuration's file exists!");
+			System.out.println(m.name + "The configuration's file is already created!");
 			
 		}else{
-			m.instance.getConfig().options().copyDefaults(false);
-			m.instance.getConfig().createSection("Spawn");
-			m.instance.getConfig().createSection("Spawn.x");
-			m.instance.getConfig().createSection("Spawn.y");
-			m.instance.getConfig().createSection("Spawn.z");
-			m.instance.saveConfig();
+			m.getConfig().options().copyDefaults(false);
+			m.getConfig().createSection("Spawn");
+			m.getConfig().createSection("Spawn.x");
+			m.getConfig().createSection("Spawn.y");
+			m.getConfig().createSection("Spawn.z");
+			m.saveConfig();
 			}
 
 }

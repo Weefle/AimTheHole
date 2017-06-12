@@ -23,10 +23,10 @@ public class CommandATH implements CommandExecutor {
             
             Location loc = p.getLocation();
             
-            m.instance.getConfig().set("Spawn.x", loc.getX());
-            m.instance.getConfig().set("Spawn.y", loc.getY());
-            m.instance.getConfig().set("Spawn.z", loc.getZ());
-            m.instance.saveConfig();
+            m.getConfig().set("Spawn.x", loc.getX());
+            m.getConfig().set("Spawn.y", loc.getY());
+            m.getConfig().set("Spawn.z", loc.getZ());
+            m.saveConfig();
             
 		}
 		return true;

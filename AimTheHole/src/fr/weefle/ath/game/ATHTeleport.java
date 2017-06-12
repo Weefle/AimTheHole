@@ -16,7 +16,7 @@ public class ATHTeleport {
 	public void teleport() {
 		for(UUID uuid : m.playeringame){
 			Player pl = Bukkit.getPlayer(uuid);
-			Location loc = new Location(pl.getWorld(), m.instance.getConfig().getDouble("Spawn.x"), m.instance.getConfig().getDouble("Spawn.y"), m.instance.getConfig().getDouble("Spawn.z"));
+			Location loc = new Location(pl.getWorld(), m.getConfig().getDouble("Spawn.x"), m.getConfig().getDouble("Spawn.y"), m.getConfig().getDouble("Spawn.z"));
 			if(loc != null){
 			pl.teleport(loc);
 			pl.sendMessage(m.name + "The game is strating...");

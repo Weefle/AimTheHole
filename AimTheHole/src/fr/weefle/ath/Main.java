@@ -11,7 +11,6 @@ import fr.weefle.ath.game.ATHTeleport;
 public class Main extends JavaPlugin {
 	
 	public String name;
-	public Main instance;
 	public ATHEvents e = new ATHEvents(this);
 	public ATHGame g = new ATHGame(this);
 	public CreateConfig cc = new CreateConfig(this);
@@ -21,7 +20,6 @@ public class Main extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		instance =this;
 		name = ChatColor.GREEN + "[AimTheHole] " + ChatColor.BLUE;
 		e.registerEvents();
 		c.registerCommands();
